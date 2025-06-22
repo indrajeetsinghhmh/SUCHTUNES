@@ -17,7 +17,7 @@ function formatTime(seconds) {
 }
 
 async function fetchSongs(artist) {
-  let a = await fetch(`http://127.0.0.1:5500/songs/${artist}/`);
+  let a = await fetch(`https://github.com/indrajeetsinghhmh/SUCHTUNES/tree/main/songs/${artist}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -219,7 +219,7 @@ document.getElementById("searchSong").addEventListener("input", function () {
 
 // get folders or playlists
 async function getFolderNames() {
-  let res = await fetch("http://127.0.0.1:5500/songs/");
+  let res = await fetch("https://github.com/indrajeetsinghhmh/SUCHTUNES/tree/main/songs");
   let html = await res.text();
 
   let container = document.createElement("div");
@@ -244,7 +244,7 @@ async function songsContainer() {
   const folders = await getFolderNames();
   let firstSongPlayed = false;
   for (let i = 0; i < foldersList.length; i++) {
-    let url = `http://127.0.0.1:5500/songs/${folders[i]}/info.json`;
+    let url = `https://github.com/indrajeetsinghhmh/SUCHTUNES/tree/main/songs/${folders[i]}/info.json`;
     const response = await fetch(url);
     const data = await response.json();
     // console.log(data);
