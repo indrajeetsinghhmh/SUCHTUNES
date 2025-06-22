@@ -17,20 +17,11 @@ function formatTime(seconds) {
 }
 
 async function fetchSongs(artist) {
-  let a = await fetch(`https://indrajeetsinghhmh.github.io/SUCHTUNES/songs/${artist}/`);
-  let response = await a.text();
-  let div = document.createElement("div");
-  div.innerHTML = response;
-  let as = div.getElementsByTagName("a");
-  let songs = [];
-  for (let index = 0; index < as.length; index++) {
-    const element = as[index];
-    if (element.href.endsWith(".mp3")) {
-      songs.push(element.href);
-    }
-  }
-  return songs;
+  const playlistURL = `songs/${artist}/songs.json`;
+  const res = await fetch(playlistURL);
+  return await res.json(); // Returns array of full URLs
 }
+
 
 function playAudio(url) {
   const result = decodeURIComponent(
@@ -240,36 +231,37 @@ async function getFolderNames() {
 }
 
 async function songsContainer() {
-  foldersList = await getFolderNames(); // Store globally
-  const folders = await getFolderNames();
-  let firstSongPlayed = false;
-  for (let i = 0; i < foldersList.length; i++) {
-    let url = `https://indrajeetsinghhmh.github.io/SUCHTUNES/songs/${folders[i]}/info.json`;
-    const response = await fetch(url);
-    const data = await response.json();
-    // console.log(data);
+  const response = await fetch("playlists.json");
+  foldersList = await response.json(); // 🔁 Use this list everywhere
+  currentFolderIndex = 0;
+
+  foldersList.forEach((data, i) => {
     let div = document.createElement("div");
     div.classList.add("card");
+
     let img = document.createElement("img");
     img.src = data.image;
+
     let h2 = document.createElement("h2");
     h2.innerHTML = data.folder;
+
     let p = document.createElement("p");
     p.innerHTML = data.desc;
+
     div.appendChild(img);
     div.appendChild(h2);
     div.appendChild(p);
 
-    let cardContainer = document.querySelector(".cardContainer");
-    cardContainer.appendChild(div);
+    document.querySelector(".cardContainer").appendChild(div);
 
     div.addEventListener("click", async () => {
-      let list = document.querySelector(".songList");
-      list.innerHTML = "";
-      currentFolderIndex = i; // Track current folder index
+      document.querySelector(".songList").innerHTML = "";
+      currentFolderIndex = i;
       await playSong(data.search);
     });
-  }
+  });
+}
+
 }
 
 // loading previously played song
