@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  user-select: none;
+  outline: none;
+}
+body {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  width: 97vw;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-nav {
+  display: flex;
+  gap: 8px;
+  width: 30%;
+  height: 30px;
+}
+.left-nav > img:nth-child(2) {
+  width: 50px;
+  height: 40px;
+  position: relative;
+  top: -4px;
+}
+.left-nav button {
+  background-color: #1f1f1f;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  margin: auto;
+  padding: 7px;
+}
+.left-nav button img {
+  width: 20px;
+}
+.left-nav div {
+  background-color: #1f1f1f;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 30px;
+  width: 330px;
+  height: 35px;
+  gap: 12px;
+}
+.left-nav div input {
+  background-color: #1f1f1f;
+  border: none;
+  width: 220px;
+}
+.left-nav div input::placeholder {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.right-nav {
+  color: #afafaf;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 30px;
+}
+.right-nav p img {
+  width: 15px;
+}
+.right-nav p {
+  color: #b3b3b3;
+}
+.right-nav div {
+  width: 2px;
+  background-color: white;
+  height: 25px;
+}
+.right-nav p:hover {
+  cursor: pointer;
+  color: white;
+}
+.right-nav button {
+  width: 100px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.right-nav button:hover {
+  background-color: #f0e1e1;
+}
+
+main {
+  width: 97vw;
+  margin: auto;
+  height: 80%;
+  display: flex;
+  gap: 9px;
+}
+main .left {
+  width: 28%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px;
+  padding-top: 19px;
+}
+.left > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left > div:nth-child(1) h2 {
+  font-size: 15px;
+}
+.left > div:nth-child(1) img {
+  height: 19px;
+}
+.left > div:nth-child(2) {
+  height: 60%;
+  margin-top: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+/* Hide scrollbar by default (Chrome, Edge, Safari) */
+.left > div:nth-child(2)::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Show custom scrollbar on hover */
+.left > div:nth-child(2):hover::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+}
+
+/* Scrollbar Track (optional style) */
+.left > div:nth-child(2):hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Scrollbar Thumb */
+.left > div:nth-child(2):hover::-webkit-scrollbar-thumb {
+  background-color: #98a9b8;
+  border-radius: 4px;
+}
+
+/* Ensure smooth overlay effect */
+.left > div:nth-child(2) {
+  scrollbar-gutter: stable; /* Optional: avoids layout shift */
+}
+
+.songNames {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  padding: 12px;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.songNames h2 {
+  font-size: 15px;
+}
+.songNames button {
+  width: 90px;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: none;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px;
+}
+.songNames button:hover {
+  background-color: #f0f0f0d7;
+}
+.invert {
+  background-color: #e0e0e0;
+  border: none;
+  color: black;
+}
+.invert > button {
+  background-color: black;
+  color: white;
+}
+.invert > button:hover {
+  background-color: #0f0f0fd7;
+}
+
+.left > div:nth-child(3) {
+  width: 400px;
+}
+.left > div:nth-child(3) a {
+  text-decoration: none;
+  color: #98a9b8;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.left > div:nth-child(3) a:last-child {
+  color: #ffffd9;
+}
+.left > div:nth-child(4) button {
+  margin-top: 21px;
+  background-color: transparent;
+  color: white;
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 50px;
+  cursor: pointer;
+}
+.left > div:nth-child(4) button img {
+  width: 15px;
+}
+.left > div:nth-child(4) button:hover {
+  background-color: #f0f0f013;
+}
+
+#searchSong {
+  color: #fff;
+  font-family: Cambria;
+}
+
+footer {
+  width: 97vw;
+  margin: auto;
+  background-color: #7969cc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 65px;
+  margin-top: 5px;
+}
+footer > div h2 {
+  font-size: 15px;
+}
+footer > div p {
+  font-size: 14px;
+}
+footer button {
+  width: 160px;
+  border-radius: 25px;
+  height: 50px;
+  border: none;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+footer button:hover {
+  background-color: black;
+  color: white;
+}
+
+main .right {
+  height: 100%;
+  background-color: #1b1b1b;
+  width: 72%;
+  border-radius: 10px;
+  padding: 20px;
+}
+.right > h1 {
+  font-size: 25px;
+}
+.right .cardContainer {
+  height: 82%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  overflow: auto;
+  overflow-x: hidden;
+  gap: 10px;
+  position: relative;
+}
+.card {
+  width: 190px;
+  height: 310px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #252525;
+  position: relative;
+  transition: all 0.9s;
+}
+.card:hover {
+  background-color: rgb(105, 103, 103);
+  cursor: pointer;
+  --a: 1;
+}
+
+.card > * {
+  padding-top: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 75%;
+  object-fit: contain;
+}
+
+/* Hide scrollbar by default (Chrome, Edge, Safari) */
+.cardContainer::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Show custom scrollbar on hover */
+.cardContainer:hover::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+}
+
+/* Scrollbar Track (optional style) */
+.cardContainer:hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Scrollbar Thumb */
+.cardContainer:hover::-webkit-scrollbar-thumb {
+  background-color: #98a9b8;
+  border-radius: 4px;
+}
+
+/* Ensure smooth overlay effect */
+.cardContainer {
+  scrollbar-gutter: stable; /* Optional: avoids layout shift */
+}
+
+.playbar {
+  width: 69vw;
+  height: 80px;
+  position: relative;
+  right: 15px;
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.seekbar {
+  height: 4px;
+  width: 98%;
+  background: #b3b3b3;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 8px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  background-color: #b3b3b3;
+  position: relative;
+  bottom: 5px;
+  left: 0%;
+  transition: left 0.5s;
+}
+
+.abovebar {
+  padding: 10px;
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.abovebar .songinfo {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.abovebar .songbuttons {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.songbuttons img {
+  cursor: pointer;
+}
+.abovebar .timevol {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 25%;
+  justify-content: flex-end;
+  /* background-color: rgba(255, 255, 255, 0.226); */
+}
+.volume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+.range input {
+  cursor: pointer;
+}
+.hamburger {
+  display: none;
+}
+
+/* adding media queries for small screens */
+
+@media screen and (max-width: 1200px) {
+  .right-nav p,
+  .right-nav div {
+    display: none;
+  }
+  main .right,
+  .playbar {
+    margin: auto;
+    width: 97vw;
+  }
+  .right .cardContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    height: 100%;
+  }
+  main .left {
+    position: absolute;
+    left: -300px;
+    transition: left 0.5s;
+  }
+  nav .left-nav .hamburger {
+    display: inline;
+  }
+  main .active {
+    position: absolute;
+    width: 75vw;
+    left: 10px;
+    z-index: 1;
+  }
+  footer {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .abovebar .timevol {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-nav > img:nth-child(1),
+  .left-nav button,
+  footer {
+    display: none;
+  }
+  .right .cardContainer {
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    padding-left: 2%;
+    gap: 30px;
+  }
+  nav .left-nav .hamburger {
+    display: inline;
+  }
+  .right .playbar {
+    width: 100vw;
+    margin: auto;
+    height: 120px;
+    position: absolute;
+    bottom: 10px;
+    left: 1px;
+  }
+  .right .playbar .abovebar {
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .abovebar .songinfo {
+    justify-content: center;
+  }
+  .abovebar .timevol {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .right .cardContainer {
+    grid-template-columns: 1fr;
+  }
+  .right > .playbar {
+    height: 130px;
+  }
+  .card {
+    width: 100%;
+  }
+  .card > img {
+    width: 100%;
+  }
+  nav .left-nav > div:last-child {
+    display: none;
+  }
+  main .left {
+    height: 90vh;
+  }
+  .left > div:nth-child(3) {
+    word-wrap: break-word;
+    width: 100%;
+  }
+}

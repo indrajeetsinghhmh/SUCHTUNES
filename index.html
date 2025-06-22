@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SUCHTUNES – Tune In. Vibe Out.</title>
+	<link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<nav>
+		<div class="left-nav">
+			<img class="hamburger" src="icons/hamburger.svg" alt="">
+			<img src="icons/logo.png" alt="">
+			<button><img src="icons/home.svg" alt=""></button>
+			<div><img src="icons/search.svg" alt=""><input id="searchSong" type="text" placeholder="What do you want to play?"> | <img
+					src="icons/browse.svg" alt=""></div>
+		</div>
+		<div class="right-nav">
+			<p>Premium</p>
+			<p>Support</p>
+			<p>Download</p>
+			<div></div>
+			<p><img src="icons/install.svg" alt=""> Install App</p>
+			<p>Sign up</p>
+			<button>Log in</button>
+		</div>
+	</nav>
+	<main>
+		<div class="left">
+			<div>
+				<h2>The Pulse of Your Playlist</h2>
+				<img src="icons/plus.svg" alt="">
+			</div>
+			<div class="songList">
+
+			</div>
+			<div>
+				<a href="#">Legal</a><a href="#">Safety&PrivacyCenter</a><a href="#">PrivacyPolicy</a><a
+					href="#">cookies</a><br><a href="#">AboutAds</a><a href="#">Accessibility</a><br>
+				<a href="#">Cookies</a>
+			</div>
+			<div>
+				<button><img src="icons/globe.svg" alt=""> English</button>
+			</div>
+		</div>
+		<div class="right">
+			<h1>Streaming Soulful Beats</h1>
+			<div class="cardContainer">
+
+			</div>
+			<div class="playbar">
+				<div class="abovebar">
+					<div class="songinfo">
+					</div>
+					<div class="songbuttons">
+						<img width="19" id="previous" src="icons/prevsong.svg" alt="">
+						<img width="19" id="play" src="icons/play.svg" alt="">
+						<img width="19" id="next" src="icons/nextsong.svg" alt="">
+					</div>
+					<div class="timevol">
+						<div class="songtime">
+						</div>
+						<div class="volume">
+							<img class="volicon" width="25" src="icons/volume.svg" alt="">
+							<div class="range">
+								<input type="range" value="20" name="volume" id="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="seekbar">
+					<div class="circle"></div>
+				</div>
+
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div>
+			<h2>Preview of Suchtunes</h2>
+			<p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+		</div>
+		<button>Sign up free</button>
+	</footer>
+	<script>
+		document.querySelector(".hamburger").addEventListener("click", () => {
+			document.querySelector(".left").classList.toggle("active");
+			let image = document.querySelector(".hamburger");
+			if (image.src.includes("hamburger.svg")) {
+				image.src = "icons/close.svg";
+			} else {
+				image.src = "icons/hamburger.svg";
+			}
+			
+		})
+		document.querySelector(".right").addEventListener("click", () => {
+			document.querySelector(".left").classList.remove("active")
+			let image = document.querySelector(".hamburger");
+			image.src = "icons/hamburger.svg";
+		})
+	</script>
+	<script src="script.js"></script>
+</body>
+
+</html>
